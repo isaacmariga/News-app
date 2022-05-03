@@ -1,10 +1,9 @@
-from flask import Flask
-from config import config_options
+from flask import render_template
+from . import main
 
-#Initializing app
-def app(config_name):
-  app = Flask(__name__)
-
-
-  # creating  the app configurations
-  app.config.from_object(config_options[config_name])
+@main.app_errorhandler(404)
+def four_Ow_four(error):
+    '''
+    Function to render the 404 error page
+    '''
+    return render_template('error.html'),404
