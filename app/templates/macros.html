@@ -4,7 +4,7 @@
 <a href="/newsarticle/{{general_category.id}}" class="list-group-item list-group-item-action sources " style="width: 20rem;">{{general_category.name}}</a> {% endfor %} {% endmacro %}
 
 <!-- Displaying reviews macro -->
-{% macro displayArticles(articles_items) %} {% for articles in articles_items %}
+{% macro displayArticles(articles_items) %} {% for articles in articles_items[:3] %}
 
 <div class="row">
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 posterPath">
