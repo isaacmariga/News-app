@@ -1,21 +1,17 @@
-import unittest
-from app.models.sources import Sources
+import urllib.request,json
+from .models.articles import Articles
+from .models.sources import Sources
 
 
-class SourcesTest(unittest.TestCase):
-    '''
-    Test Class to test the behaviour of the Source class
-    '''
+# Getting api key
+api_key = None
 
-    def setUp(self):
-        '''
-        Set up method that will run before every Test
-        '''
-        self.new_source = Sources("abc-news","ABC News","Your trusted source for breaking news, analysis, exclusive interviews, headlines, and videos at ABCNews.com.","https://abcnews.go.com","general","en","us")
+# Getting the movie base url
+base_url = None
+base_article_url = None
 
-    def test_instance(self):
-        self.assertTrue(isinstance(self.new_source,Sources))
-
-
-if __name__ == '__main__':
-    unittest.main()
+def configure_request(app):
+    global api_key,base_url,base_article_url
+    api_key = app.config['NEWS_API_KEY']
+    base_url = app.config['NEWS_API_BASE_URL']
+    base_article_url = app.config['ARTICLES_API_BASE_URL']
