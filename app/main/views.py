@@ -13,7 +13,7 @@ def index():
     View root page function that returns the index page and its data
     '''
     general_categories = get_sources('general')
-    # business_category = get_sources('business')
+    business_category = get_sources('business')
     # entertainment_categories = get_sources('entertainment')
     # sports_categories = get_sources('sports')
     # technology_categories = get_sources('technology')
@@ -21,7 +21,7 @@ def index():
     # health_category = get_sources('health')
 
     title = 'World News Highlights'
-    return render_template('index.html',title = title, general = general_categories)
+    return render_template('index.html',title = title, general = general_categories, business = business_category)
 
 @main.route('/newsarticle/<id>')
 def newsarticle(id):

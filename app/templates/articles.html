@@ -1,9 +1,24 @@
 {% extends 'base.html'%} {% import 'macros.html' as macro%} {% block content %}
-<div class="row">
-    <h3> Soucer</h3>
-    <ul>
-        {{ macro.displayArticles(articles)}}
-    </ul>
+<div class="container">
 
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="app/static/yuriy-vertikov-vbqy2P3f4no-unsplash.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="app/static/the-dk-photography-2WIV_f1V1Bs-unsplash.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <h3> Latest {{title}}</h3>
+        <ul>
+            {{ macro.displayArticles(articles)}}
+        </ul>
+    </div>
 </div>
 {% endblock %}
