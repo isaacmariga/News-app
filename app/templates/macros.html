@@ -1,5 +1,5 @@
 <!-- Displaying sources list macro  -->
-{% macro displaySourcesList(sources_list) %} {% for general_category in general %}
+{% macro displaySourcesList(general_categories) %} {% for general_category in general_categories %}
 
 <a href="/newsarticle/{{general_category.id}}" class="list-group-item list-group-item-action sources " style="width: 20rem;">{{general_category.name}}</a> {% endfor %} {% endmacro %}
 
@@ -7,7 +7,9 @@
 {% macro displayArticles(articles_items) %} {% for articles in articles_items %}
 
 <div class="row">
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 posterPath" style="background: url({{articles.urlToImage}}) no-repeat center center">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 posterPath">
+        <img class="fadeInUp details" src="{{articles.urlToImage}}" width="100%">
+
     </div>
 
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 movie-details">

@@ -31,4 +31,4 @@ def newsarticle(id):
     '''
     articles_items = get_articles(id)
     title = f'{id} | News Articles'
-    return render_template('newsarticle.html',title = title, articles = articles_items)
+    return render_template('articles.html',title = title, articles = articles_items)

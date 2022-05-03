@@ -19,12 +19,17 @@
 
     <!-- Popular movie -->
     <div class="row">
-        <h3> Sources</h3>
-        <ul>
-            {{ macro.displaySourcesList(general)}}
-        </ul>
+        <h3> Sources/h3>
+            <!-- <ul>
+                {{ macro.displaySourcesList(general)}}
+            </ul> -->
+            {% for general_category in general %}
+
+            <a href="/newsarticle/{{general_category.id}}" class="list-group-item list-group-item-action srces " style="width: 20rem;">{{general_category.name}}</a> {% endfor %}
+
 
     </div>
+
 
 
 
