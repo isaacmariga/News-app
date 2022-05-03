@@ -1,0 +1,17 @@
+<!-- Displaying sources list macro  -->
+{% macro displaySourcesList(sources_list) %} {% for general_category in general %}
+
+<a href="/newsarticle/{{general_category.id}}" class="list-group-item list-group-item-action srces " style="width: 20rem;">{{general_category.name}}</a> {% endfor %} {% endmacro %}
+
+<!-- Displaying reviews macro -->
+{% macro displayReviews(review_list) %} {% for review in review_list %}
+
+<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 review-card">
+    <h2> {{ review.title}} </h2>
+    <p> {{ review.review | truncate(30) }}</p>
+
+
+
+
+</div>
+{% endfor %} {% endmacro %}
