@@ -1,16 +1,29 @@
 <!-- Displaying sources list macro  -->
 {% macro displaySourcesList(sources_list) %} {% for general_category in general %}
 
-<a href="/newsarticle/{{general_category.id}}" class="list-group-item list-group-item-action srces " style="width: 20rem;">{{general_category.name}}</a> {% endfor %} {% endmacro %}
+<a href="/newsarticle/{{general_category.id}}" class="list-group-item list-group-item-action sources " style="width: 20rem;">{{general_category.name}}</a> {% endfor %} {% endmacro %}
 
 <!-- Displaying reviews macro -->
-{% macro displayReviews(review_list) %} {% for review in review_list %}
+{% macro displayArticles(articles_items) %} {% for articles in articles_items %}
 
-<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 review-card">
-    <h2> {{ review.title}} </h2>
-    <p> {{ review.review | truncate(30) }}</p>
+<div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 posterPath" style="background: url({{articles.urlToImage}}) no-repeat center center">
+    </div>
+
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 movie-details">
+        <h3>{{ articles.title }}</h3>
+        <h4>by: {{ articles.author }}</h4>
+        <hr>
+
+        <p class="description"> {{ articles.description }}</p>
+        <hr>
+        <p><em>{{articles.content}}</em></p>
+
+        <p>Posted on: {{articles.publishedAt[:10]}}</p>
+        <p><a href="{{ articles.url }}">Go to full story</a></p>
 
 
+    </div>
 
 
 </div>
