@@ -1,4 +1,5 @@
 import os
+from .instance.config import NEWS_API_KEY
 
 
 class Config:
@@ -9,9 +10,9 @@ class Config:
 
     ARTICLES_API_BASE_URL = 'https://newsapi.org/v2/everything?sources={}&apiKey={}'
 
-    HIGHLIGHTS_API_BASE_URL = 'https://newsapi.org/v2/top-headlines?sources={}-news&apiKey={}'
+    HIGHLIGHTS_API_BASE_URL = 'https://newsapi.org/v2/top-headlines?language=en&apiKey={}'
 
-    NEWS_API_KEY = ('6ad1799356aa4cfd8a50aae815150add')
+    NEWS_API_KEY = NEWS_API_KEY
 
 
 class ProdConfig(Config):

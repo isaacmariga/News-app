@@ -1,6 +1,7 @@
 import urllib.request,json
 from .models.articles import Articles
 from .models.sources import Sources
+from .models.highlights import Highlights
 
 
 # Getting api key
@@ -9,12 +10,15 @@ api_key = None
 # Getting the movie base url
 base_url = None
 base_article_url = None
+base_highlights_url = None
 
 def configure_request(app):
-    global api_key,base_url,base_article_url
+    global api_key,base_url,base_article_url,base_highlights_url
     api_key = app.config['NEWS_API_KEY']
     base_url = app.config['NEWS_API_BASE_URL']
     base_article_url = app.config['ARTICLES_API_BASE_URL']
+    base_highlights_url = app.config['HIGHLIGHTS_API_BASE_URL']
+
 
 
 def get_sources(category):
@@ -79,6 +83,8 @@ def get_articles(id):
             articles_results_list = get_articles_response['articles']
             articles_results = process_articles_results(articles_results_list)
 
+        
+
     return articles_results
 
 def process_articles_results(articles_list):
@@ -108,3 +114,51 @@ def process_articles_results(articles_list):
             articles_results.append(article_object)
 
     return articles_results
+
+def get_highlights(author):
+    '''
+    Function that gets the json Highlights response to our url request
+    '''
+    get_highlights_url = base_highlights_url.format(api_key)
+
+    with urllib.request.urlopen(get_highlights_url) as url:
+        get_highlights_data = url.read()
+        get_highlights_response = json.loads(get_highlights_data)
+
+        highlights_results = None
+
+        if get_highlights_response['articles']:
+            highlights_results_list = get_highlights_response['articles']
+            highlights_results = process_highlights_results(highlights_results_list)
+
+        
+
+    return highlights_results
+
+def process_highlights_results(highlights_list):
+    """
+    Function  that processes the articles result and transform them to a list of Objects
+
+    Args:
+        articles_list: A list of dictionaries that contain sources details
+
+    Returns :
+        articles_results: A list of source objects
+    """
+    
+    highlights_results = []
+    for highlights_item in highlights_list:
+        id = highlights_item.get('id')
+        author = highlights_item.get('author')
+        title = highlights_item.get('title')
+        description = highlights_item.get('description')
+        url = highlights_item.get('url')
+        urlToImage = highlights_item.get('urlToImage')
+        publishedAt = highlights_item.get('publishedAt')
+        content = highlights_item.get('content')
+
+        if urlToImage:
+            highlights_object = Highlights(id, author, title, description, url, urlToImage, publishedAt, content)
+            highlights_results.append(highlights_object)
+
+    return highlights_results
