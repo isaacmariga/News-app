@@ -21,7 +21,7 @@ def index():
     health_category = get_sources('health')
 
 
-    title = f'{id} News Highlights'
+    title = 'Todays News'
 
     return render_template('index.html',title = title, general = general_categories, business = business_category)
 
