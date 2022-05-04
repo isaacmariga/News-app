@@ -115,11 +115,13 @@ def process_articles_results(articles_list):
 
     return articles_results
 
-def get_highlights(author):
+
+
+def get_highlights(id):
     '''
     Function that gets the json Highlights response to our url request
     '''
-    get_highlights_url = base_highlights_url.format(api_key)
+    get_highlights_url = base_highlights_url.format(id, api_key)
 
     with urllib.request.urlopen(get_highlights_url) as url:
         get_highlights_data = url.read()

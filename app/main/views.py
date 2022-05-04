@@ -13,11 +13,17 @@ def index():
     '''
     general_categories = get_sources('general')
    
-    bbc_categories = get_highlights('Rory Smith')
+    business_category = get_sources('business')
+    entertainment_categories = get_sources('entertainment')
+    sports_categories = get_sources('sports')
+    technology_categories = get_sources('technology')
+    science_category = get_sources('science')
+    health_category = get_sources('health')
 
 
-    title = 'World News Highlights'
-    return render_template('index.html',title = title, general = general_categories, bbc = bbc_categories)
+    title = f'{id} News Highlights'
+
+    return render_template('index.html',title = title, general = general_categories, business = business_category)
 
 @main.route('/newsarticle/<id>')
 def newsarticle(id):
