@@ -12,7 +12,10 @@ class Config:
 
     HIGHLIGHTS_API_BASE_URL = 'https://newsapi.org/v2/top-headlines?sources={}&language=en&apiKey={}'
 
-    NEWS_API_KEY = "6ad1799356aa4cfd8a50aae815150add"
+    CATEGORY_API_BASE_URL = 'https://newsapi.org/v2/top-headlines/sources?category={}&apiKey={}'
+
+
+    NEWS_API_KEY = "4db0fda9f39c4d3d932dbd2db03ead2e"
 
 
 class ProdConfig(Config):

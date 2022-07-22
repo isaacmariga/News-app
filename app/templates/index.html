@@ -3,64 +3,106 @@
 <!-- Styles block -->
 
 <!-- {% block styles%} {{ super() }}
-<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}"> {% endblock %} -->
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}"> {% endblock %} -->
 <!-- Content block -->
 {% block content %}
 <!-- <link rel="stylesheet" href="{{url_for('static',filename='index.css')}}"> -->
-<link href="https://fonts.googleapis.com/css?family=Heebo|Playfair+Display&display=swap" rel="stylesheet">
 
 
 
-<div class="container">
-    <div class="row">
+<div class="container index">
 
-        <div class="col">
-            <div class="list-group bg-info  p-4 d-flex align-items-center ">
-                <h2 class="text-white"> Sources</h2>
+    <div class="general">
+        <div class="list-group bg-info  p-4 d-flex align-items-center ">
+            <h3 class="text-white">All sources</h3>
 
-                {% for general_category in general %}
-                <div class="card d-flex align-items-center" style="width: 90%">
+            {% for general_category in general %}
+            <div class="card d-flex align-items-center" style="width: 90%">
 
-                    <a href="/newsarticle/{{general_category.id}} " class="card-body list-group-item-action srces ">{{general_category.name}}</a>
-                </div>
-                {% endfor %}
+                <a href="/newsarticle/{{general_category.id}} "
+                    class="card-body list-group-item-action srces ">{{general_category.name}}</a>
             </div>
+            {% endfor %}
         </div>
-        <!-- <div class="col ">
-            <div class="card " style="width: 30rem; ">
-                <img class="card-img-top " src="{{ url_for( 'static', filename='business.jpg' ) }} " width="200px " height="200px " alt="Card image cap ">
+    </div>
+
+    <div class="categories">
+        <a href="/category/business">
+            <div class="card business">
+                <img class="card-img-top " src="{{ url_for( 'static', filename='business.jpg' ) }} " width="200px "
+                    height="200px " alt="Card image cap ">
                 <div class="card-body ">
                     <h3 class="card-title font-weight-bold ">Business</h3>
                     <hr>
-                    <p class="card-text ">Get up to date with the latest busnesness news</p>
+                    <p class="card-text ">Get up to date with the latest business news</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="/category/entertainment">
+            <div class="card entertainment ">
+                <img class="card-img-top " src="{{ url_for( 'static', filename='entertainment.jpg' ) }} " width="200px "
+                    height="200px " alt="Card image cap ">
+                <div class="card-body ">
+                    <h3 class="card-title font-weight-bold ">Entertainment</h3>
+                    <hr>
+                    <p class="card-text ">Get up to date with the latest entertainment news</p>
                 </div>
 
-                <button class="btn btn-secondary dropdown-toggle " type="button " id="dropdownMenuButton " data-toggle="dropdown " aria-haspopup="true " aria-expanded="false ">
-            <div class="dropdown-menu ">
-                <ul class="list-group list-group-flush ">
-                    {% for business_category in business %}
+            </div>
+        </a>
 
-                    <a href="/newsarticle/{{business_category.id}} "  class="list-group-item ">{{business_category.name}}</a>
-                    {% endfor %}
-                    
-                </ul>
-            </div> -->
+        <a href="/category/health">
+            <div class="card health">
+                <img class="card-img-top " src="{{ url_for( 'static', filename='health.jpg' ) }} " width="200px "
+                    height="200px " alt="Card image cap ">
+                <div class="card-body ">
+                    <h3 class="card-title font-weight-bold ">Health</h3>
+                    <hr>
+                    <p class="card-text ">Get up to date with the latest health news</p>
+                </div>
 
+            </div>
+        </a>
+        <a href="/category/sports">
+            <div class="card sports">
+                <img class="card-img-top " src="{{ url_for( 'static', filename='sports.jpg' ) }} " width="200px "
+                    height="200px " alt="Card image cap ">
+                <div class="card-body ">
+                    <h3 class="card-title font-weight-bold ">Sports</h3>
+                    <hr>
+                    <p class="card-text ">Get up to date with the latest sports news</p>
+                </div>
+
+
+            </div>
+        </a>
+        <a href="/category/technology">
+            <div class="card technology">
+                <img class="card-img-top " src="{{ url_for( 'static', filename='technology.jpg' ) }} " width="200px "
+                    height="200px " alt="Card image cap ">
+                <div class="card-body ">
+                    <h3 class="card-title font-weight-bold ">Technology</h3>
+                    <hr>
+                    <p class="card-text ">Get up to date with the latest technology news</p>
+                </div>
+
+            </div>
+        </a>
     </div>
 </div>
 
 
 
 
-</div>
-
-
-</div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous ">
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous ">
-</script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous ">
-</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js "
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous ">
+    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js "
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous ">
+    </script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js "
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous ">
+    </script>
 
 {% endblock%}

@@ -1,18 +1,19 @@
 <!-- Displaying sources list macro  -->
 {% macro displaySourcesList(general_categories) %} {% for general_category in general_categories %}
 
-<a href="/newsarticle/{{general_category.id}}" class="list-group-item list-group-item-action sources " style="width: 20rem;">{{general_category.name}}</a> {% endfor %} {% endmacro %}
+<a href="/newsarticle/{{general_category.id}}" class="list-group-item list-group-item-action sources "
+    style="width: 20rem;">{{general_category.name}}</a> {% endfor %} {% endmacro %}
 
 <!-- Displaying reviews macro -->
 {% macro displayArticles(articles_items) %} {% for articles in articles_items %}
 
-<div class="row">
+<div class="row article">
     <div class="col posterPath">
-        <img class="fadeInUp details" src="{{articles.urlToImage}}" width="100%">
+        <img class="image details" src="{{articles.urlToImage}}" width="100%">
 
     </div>
 
-    <div class="col movie-details">
+    <div class="col movie-details border-info">
         <h3>{{ articles.title }}</h3>
         <h4>by: {{ articles.author }}</h4>
         <hr>

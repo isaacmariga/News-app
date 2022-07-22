@@ -1,11 +1,16 @@
 {% extends 'base.html'%} {% import 'macros.html' as macro%} {% block content %}
 <div class="container">
-
+    {% if articles%}
     <div class="col">
         <h3> Latest {{title}}</h3>
         <ul>
             {{ macro.displayArticles(articles)}}
         </ul>
     </div>
+    {% else %}
+    <div class="apology">
+        <h1>Sorry, There are no articles from this source</h1>
+    </div>
+    {% endif%}
 </div>
 {% endblock %}

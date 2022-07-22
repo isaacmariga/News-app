@@ -1,76 +1,105 @@
-body {
-    font-family: sans-serif;
-    background: #eee;
+* {
+  margin: 0%;
+  padding: 0%;
+  border: 0%;
 }
 
-a,
-h1,
-h2 {
-    color: #377ba8;
+body {
+  font-family: sans-serif;
+  /* background: #eee; */
+  background-image: url("/static/back.jpg");
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(71, 71, 71);
 }
 
 p,
 h1,
-h2 {
-    font-family: 'Georgia', serif;
-    margin: 0;
-    color: #377ba8;
+h2,
+h3 {
+  font-family: "Georgia", serif;
+  margin: 0;
 }
 
-h1 {
-    border-bottom: 2px solid #eee;
+.card {
+  border-style: solid;
+  border-color: rgba(0, 161, 170, 0.952);
+}
+.cards {
+  padding: 1rem;
+  border-style: solid;
+  border-color: rgba(0, 161, 170, 0.952);
 }
 
-h2 {
-    font-size: 1.2em;
+.index {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1rem;
+}
+@media screen and (max-width: 768px) {
+  .index {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    order: -1;
+  }
 }
 
-.page {
-    margin: 2em auto;
-    width: 35em;
-    border: 5px solid #ccc;
-    padding: 0.8em;
-    background: white;
+.card-img-top {
+  object-fit: cover;
 }
 
-.entries {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.apology {
+  height: 100vh;
+  display: grid;
+  place-items: center;
 }
 
-.entries li {
-    margin: 0.8em 1.2em;
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  place-content: start center;
+  gap: 1rem;
 }
 
-.entries li h2 {
-    margin-left: -1em;
+.category {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  place-content: start center;
+  gap: 5rem;
 }
 
-.add-entry {
-    font-size: 0.9em;
-    border-bottom: 1px solid #ccc;
+.container {
+  margin-top: 2rem;
 }
 
-.add-entry dl {
-    font-weight: bold;
+.navbar {
+  margin-left: 1rem;
 }
 
-.metanav {
-    text-align: right;
-    font-size: 0.8em;
-    padding: 0.3em;
-    margin-bottom: 1em;
-    background: #fafafa;
+.article {
+  border-radius: 5px;
+  margin: 2rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  background-color: rgba(240, 248, 255, 0.708);
 }
 
-.flash {
-    background: #cee5F5;
-    padding: 0.5em;
-    border: 1px solid #aacbe2;
+.image {
+  border-radius: 5px;
 }
 
-.error {
-    background: #f0d6d6;
-    padding: 0.5em;
+.nav {
+  background-color: rgba(240, 248, 255, 0.291);
+}
+.navtitle {
+  padding-left: 5px;
 }
