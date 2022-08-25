@@ -1,4 +1,4 @@
-# Marigarated
+# News App
 
 ### Author
 
@@ -31,9 +31,9 @@ You can demo the site **[here.](https://mariganews.herokuapp.com/)**
 Here is a run through of how to set up the application:
 
 - Step 1 : Clone this repository using the git clone link:
-  - **`https://github.com/isaacmariga/newsAPI.git`**
+  - **`https://github.com/isaacmariga/news-app.git`**
 - Step 2 : Navigate to the directory:
-  - **`cd newsAPI`**
+  - **`cd news-app`**
 - Step 3 : Open the directory created with your favorite IDE. If Atom type **`atom .`** if VSCode type **`code .`** . This will lauch the editor with the project setup,
 - Now feel free to hack around the project.
 
