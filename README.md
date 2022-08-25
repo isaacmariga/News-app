@@ -58,4 +58,4 @@ Primary E-mail Address: inmariga@gmail.com
 
 _MIT License_ [![License: MIT]](license/MIT)
 
-Copyright (c) 2019 **Isaac Wangombe**
+Copyright (c) 2022 **Isaac Wangombe**
